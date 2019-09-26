@@ -104,12 +104,12 @@ public class ArrayFunctions {
 		for(int i=0; i<shift;i++) {
 			temp[i] = arr[i+(arr.length-shift)];
 		}
-		for(int i=n; i>shift; i--) {
-			arr[i] = arr[i+(n-shift)];
+		for(int i=n;i>=shift;i--) {
+			arr[i]=arr[i-shift];
 		}
-//		for(int i=0;i<shift;i++) {
-//			arr[i+(arr.length-shift)] = temp[i];
-//		}
+		for(int i=0;i<shift;i++) {
+			arr[i] = temp[i];
+		}
 		return arr;
  	}
 	public static void main(String[] args) throws IOException {
@@ -122,7 +122,7 @@ public class ArrayFunctions {
 //		af.rotation(n, s, c);
 		int[] a = af.createArray();
 //		int[] b = af.arrayLeftRotation(a, 6);
-		int[] c = af.arrayRightRotation(a, 3);
+		int[] c = af.arrayRightRotation(a, 5);
 //		af.printarray(b);
 		af.printarray(c);
 //		af.printarray(b);
